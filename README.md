@@ -64,7 +64,7 @@ component.find("myModal").closeModal();
 ```
 ({
     open : function(component, event, helper) {
-		component.find("myModal").openModal();
+	component.find("myModal").openModal();
     }
 
     save: function (component, event, helper)
