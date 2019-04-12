@@ -34,13 +34,13 @@ component.find("myModal").closeModal();
 ```
 <aura:component>
 
-<lightning:button label="My Action" onclick="{!c.open}"/>
+    <lightning:button label="My Action" onclick="{!c.open}"/>
 
 
-<!-- your modal which will stay closed till you open in -->
-<c:CmpModal aura:id="myModal" title="My Action" allowClose="true">
+    <!-- your modal which will stay closed till you open in -->
+    <c:CmpModal aura:id="myModal" title="My Action" allowClose="true">
 		
-		<!-- buttons for modal footer -->
+	    <!-- buttons for modal footer -->
         <aura:set attribute="footer">
             <div class="slds-clearfix">
                 <div class="slds-float--right">
