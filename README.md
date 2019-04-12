@@ -57,15 +57,15 @@ component.find("myModal").closeModal();
 
     </c:CmpModal>	
 
-    
+
 </aura:component>
 ```
 * Javascript controller code
 ```
 ({
-	open : function(component, event, helper) {
+    open : function(component, event, helper) {
 		component.find("myModal").openModal();
-	}
+    }
 
     save: function (component, event, helper)
     {
