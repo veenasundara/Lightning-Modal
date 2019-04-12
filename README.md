@@ -56,6 +56,8 @@ component.find("myModal").closeModal();
         <lightning:input name="input2" label="Input2"/>
 
     </c:CmpModal>	
+
+    
 </aura:component>
 ```
 * Javascript controller code
