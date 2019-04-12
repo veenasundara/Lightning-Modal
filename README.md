@@ -40,7 +40,7 @@ component.find("myModal").closeModal();
     <!-- your modal which will stay closed till you open in -->
     <c:CmpModal aura:id="myModal" title="My Action" allowClose="true">
 		
-	    <!-- buttons for modal footer -->
+	<!-- buttons for modal footer -->
         <aura:set attribute="footer">
             <div class="slds-clearfix">
                 <div class="slds-float--right">
@@ -54,7 +54,6 @@ component.find("myModal").closeModal();
         <lightning:input name="input1" label="Input1"/>
 
         <lightning:input name="input2" label="Input2"/>
-
 
     </c:CmpModal>	
 </aura:component>
