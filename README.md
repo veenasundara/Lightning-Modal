@@ -2,9 +2,8 @@
 Component for Modal
 
 ## Usage
-1. add the following code to your lightning component:
+1. To add a modal, place this code in your lightning component. The modal will be closed by default and needs to be opened using javascript.
 
-* &lt;!-- add the component to your component body --&gt;
 ```
 <c:CmpModal aura:id="myModal" title="My fancy Modal" allowClose="true/false">
 
@@ -41,14 +40,14 @@ Example:
 
 
 
-2. add the following code to your lightning javascript:
+2. To open the modal, use this in your lightning javascript:
 
-* to display the modal, do this: 
 ```javascript
 component.find("myModal").openModal();
 ```
 
-* to close the modal, do this:
+3. To close the modal, use this in your lightning javascript:
+
 ```javascript
 component.find("myModal").closeModal();
 
@@ -56,17 +55,62 @@ Example:
 For the example component we created above, we ccould use this javascript in out controller:
 
 
+
+```
+
+3. Example:
+
+* A component with a button that will open the modal when clicked
+```
+<aura:component>
+
+	<lightning:button label="My Action" onclick="{!c.open}"/>
+
+
+	<!-- your modal which will stay closed till you open in -->
+	<c:CmpModal aura:id="myModal" title="My Action" allowClose="true">
+		
+		<!-- buttons for modal footer -->
+        <aura:set attribute="footer">
+            <div class="slds-clearfix">
+                <div class="slds-float--right">
+                    <lightning:button label="Cancel" onclick="{!c.cancel}"/>
+                    <lightning:button label="Save" variant="brand" onclick="{!c.save}"/>
+                </div>
+            </div>
+        </aura:set>
+
+    	<!-- modal content -->
+        <lightning:input name="input1" label="Input1"/>
+
+        <lightning:input name="input2" label="Input2"/>
+
+
+    </c:CmpModal>	
+</aura:component>
+```
+* Javascript controller code
+```
+({
+	open : function(component, event, helper) {
+		component.find("myModal").openModal();
+	}
+
     save: function (component, event, helper)
     {
     	// do your save stuff
-    	// Then, close the modal
+
+
+    	// close the modal
         component.find('myModal').closeModal();
     },
 
     cancel: function (component, event, helper)
     {
+    	// close the modal
         component.find('myModal').closeModal();
     },
+})   
 ```
 
 ## Install Steps:
